@@ -1,56 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useState } from "react";
+import * as React from "react";
+import "./App.scss";
+
+import Template from "./features/hoodie/Template";
 
 function App() {
+  const [active, setActive] = useState<string | null>(null);
+  const [colors, setColor] = useState({
+    top: "#ffffff",
+    middle: "#ffffff",
+    bottom: "#ffffff",
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <div
+        className="container"
+        style={{
+          width: 300,
+        }}
+      >
+        <input
+          className="input"
+          type="color"
+          onInput={({ currentTarget: { value } }) =>
+            setColor((prevState) => ({
+              ...prevState,
+              ...(active ? { [active as string]: value } : {}),
+            }))
+          }
+          name="color"
+        />
+        <Template
+          active={active}
+          colors={colors}
+          onClick={(e: any) =>
+            setActive(e.currentTarget.id ? e.currentTarget.id : null)
+          }
+        />
+      </div>
     </div>
   );
 }

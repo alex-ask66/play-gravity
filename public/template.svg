@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+     viewBox="0 0 229.8 462" style="enable-background:new 0 0 229.8 462;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
+</style>
+<g id="variable">
+	<polygon id="bottom_1_" class="st0" points="0.5,0.5 228.5,0.5 228.5,183.5 0.5,127.5 	"/>
+	<polygon id="moddle_1_" class="st0" points="0.5,315.5 228.5,183.5 0.5,127.5 	"/>
+	<polygon id="top_1_" class="st0" points="0.5,461.5 228.5,461.5 228.5,183.5 0.5,315.5 	"/>
+</g>
+<g id="shape">
+	<polygon id="bottom" class="st1" points="0.5,0.5 228.5,0.5 228.5,183.5 0.5,127.5 	"/>
+	<polygon id="moddle" class="st1" points="0.5,315.5 228.5,183.5 0.5,127.5 	"/>
+	<polygon id="top" class="st1" points="0.5,461.5 228.5,461.5 228.5,183.5 0.5,315.5 	"/>
+</g>
+</svg>
