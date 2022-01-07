@@ -17,7 +17,7 @@ function App() {
       <div
         className="container"
         style={{
-          width: 300,
+          width: "80vw",
         }}
       >
         <input

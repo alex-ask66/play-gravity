@@ -1,4 +1,9 @@
 import * as React from "react";
+import { useSwipeable } from "react-swipeable";
+
+import Diagonal from "../../assets/Units/Diagonal";
+import Rectangle from "../../assets/Units/Rectangle";
+import Triangle from "../../assets/Units/Triangle";
 
 import styles from "./Template.module.scss";
 
@@ -13,11 +18,51 @@ interface IProps {
   };
 }
 
+// TODO: Backend
+//  - email/telegram/viber message to admin account
+
+// TODO: Client
+//  - animated slider
+//  - color options - orders saving
+
+// TODO: Admin
+//  - colors in DB
+//  - basic authorization
+//  - orders list
+//  - ??? messages settings
+
+const components = [Diagonal, Rectangle, Triangle];
+
 const Template = ({
   onClick,
   colors: { top, middle, bottom },
   active,
 }: IProps) => {
+  const [index, setIndex] = React.useState<number>(0);
+
+  const { ref } = useSwipeable({
+    onSwipedLeft: () => {
+      setIndex((prev) => (prev === 0 ? components.length - 1 : prev - 1));
+    },
+    onSwipedRight: () => {
+      setIndex((prev) => (prev === components.length - 1 ? 0 : prev + 1));
+    },
+  });
+
+  const Component = components[index];
+
+  return (
+    <div className={styles.container} ref={ref}>
+      <Component />
+      <div className={styles.controls}>
+        {components.map((_, i) => (
+          <button key={i} onClick={() => setIndex(i)} className={styles.dot} />
+        ))}
+      </div>
+    </div>
+  );
+
+  /*
   return (
     <svg
       version="1.1"
@@ -86,6 +131,7 @@ const Template = ({
       </g>
     </svg>
   );
+*/
 };
 
 export default Template;
