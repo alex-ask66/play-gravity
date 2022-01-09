@@ -56,7 +56,14 @@ const Template = ({
       <Component />
       <div className={styles.controls}>
         {components.map((_, i) => (
-          <button key={i} onClick={() => setIndex(i)} className={styles.dot} />
+          <button
+            style={{ margin: "0.5em" }}
+            key={i}
+            onClick={() => setIndex(i)}
+            className={styles.dot}
+          >
+            {i + 1}
+          </button>
         ))}
       </div>
     </div>

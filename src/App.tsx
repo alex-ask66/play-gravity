@@ -20,17 +20,17 @@ function App() {
           width: "80vw",
         }}
       >
-        <input
-          className="input"
-          type="color"
-          onInput={({ currentTarget: { value } }) =>
-            setColor((prevState) => ({
-              ...prevState,
-              ...(active ? { [active as string]: value } : {}),
-            }))
-          }
-          name="color"
-        />
+        {/*<input*/}
+        {/*  className="input"*/}
+        {/*  type="color"*/}
+        {/*  onInput={({ currentTarget: { value } }) =>*/}
+        {/*    setColor((prevState) => ({*/}
+        {/*      ...prevState,*/}
+        {/*      ...(active ? { [active as string]: value } : {}),*/}
+        {/*    }))*/}
+        {/*  }*/}
+        {/*  name="color"*/}
+        {/*/>*/}
         <Template
           active={active}
           colors={colors}
