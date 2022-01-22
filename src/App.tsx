@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as React from "react";
 import "./App.scss";
+import Colors from "./features/Colors/Colors";
 
 import Template from "./features/hoodie/Template";
 
@@ -31,6 +32,8 @@ function App() {
         {/*  }*/}
         {/*  name="color"*/}
         {/*/>*/}
+        <h1>play_gravity</h1>
+        <Colors />
         <Template
           active={active}
           colors={colors}

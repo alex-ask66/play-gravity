@@ -2,13 +2,24 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: 5vw;
+  flex: 1;
 }
 
 .container {
-  width: 300px;
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  justify-content: center;
+  position: relative;
 }
 
-.input {
-  margin: 30px 0;
+h1 {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
 }

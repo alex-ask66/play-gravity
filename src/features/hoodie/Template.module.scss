@@ -1,3 +1,57 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+.animation {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.slide {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.hoodie {
+  width: 80vw;
+  margin-top: 5vh;
+}
+
+.controls {
+  position: relative;
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid gray;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+
+  &::before {
+    content: "";
+    width: 1px;
+    background: gray;
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dot {
+  max-height: 40px;
+  padding: 10px 0;
+  flex: 1;
+  border: none;
+}
+
+// TODO
 .top,
 .middle,
 .bottom {

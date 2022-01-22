@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useSwipeable } from "react-swipeable";
+import { useSpringCarousel } from "react-spring-carousel-js";
 
 import Diagonal from "../../assets/Units/Diagonal";
 import Rectangle from "../../assets/Units/Rectangle";
@@ -31,40 +31,59 @@ interface IProps {
 //  - orders list
 //  - ??? messages settings
 
-const components = [Diagonal, Rectangle, Triangle];
-
 const Template = ({
   onClick,
   colors: { top, middle, bottom },
   active,
 }: IProps) => {
-  const [index, setIndex] = React.useState<number>(0);
-
-  const { ref } = useSwipeable({
-    onSwipedLeft: () => {
-      setIndex((prev) => (prev === 0 ? components.length - 1 : prev - 1));
-    },
-    onSwipedRight: () => {
-      setIndex((prev) => (prev === components.length - 1 ? 0 : prev + 1));
-    },
-  });
-
-  const Component = components[index];
+  const { carouselFragment, slideToNextItem, slideToPrevItem } =
+    useSpringCarousel({
+      withLoop: true,
+      items: [
+        {
+          id: "diagonal",
+          renderItem: (
+            <div className={styles.slide}>
+              <Diagonal className={styles.hoodie} />
+            </div>
+          ),
+        },
+        {
+          id: "rectangle",
+          renderItem: (
+            <div className={styles.slide}>
+              <Rectangle className={styles.hoodie} />
+            </div>
+          ),
+        },
+        {
+          id: "triangle",
+          renderItem: (
+            <div className={styles.slide}>
+              <Triangle className={styles.hoodie} />
+            </div>
+          ),
+        },
+      ],
+    });
 
   return (
-    <div className={styles.container} ref={ref}>
-      <Component />
+    <div className={styles.container}>
+      <div className={styles.animation}>
+        {/*{transitions((style, i) => {*/}
+        {/*  const Component = components[i];*/}
+        {/*  // @ts-ignore*/}
+        {/*  return <Component className={styles.hoodie} style={style} />;*/}
+        {/*})}*/}
+        {carouselFragment}
+      </div>
       <div className={styles.controls}>
-        {components.map((_, i) => (
-          <button
-            style={{ margin: "0.5em" }}
-            key={i}
-            onClick={() => setIndex(i)}
-            className={styles.dot}
-          >
-            {i + 1}
-          </button>
-        ))}
+        <button key="prev" onClick={slideToNextItem} className={styles.dot}>
+          {"<"}
+        </button>
+        <button key="next" onClick={slideToPrevItem} className={styles.dot}>
+          {">"}
+        </button>
       </div>
     </div>
   );

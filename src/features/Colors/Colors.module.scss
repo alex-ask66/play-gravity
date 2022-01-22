@@ -1,0 +1,15 @@
+$topOffset: 50px;
+
+.container {
+  position: fixed;
+  top: $topOffset;
+  max-height: calc(100vh - #{$topOffset});
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
