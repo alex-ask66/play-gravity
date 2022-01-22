@@ -31,19 +31,24 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid gray;
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+  background: #444444;
+  height: 40px;
 }
 
 .nav {
   max-height: 40px;
-  max-width: 10vw;
   padding: 10px 0;
   flex: 1;
   border: none;
   background: none;
+  color: white;
 }
 
 .submit {
+  border: none;
+  background: none;
   font-size: 18px;
+  flex: 3;
+  color: white;
+  font-weight: bold;
 }

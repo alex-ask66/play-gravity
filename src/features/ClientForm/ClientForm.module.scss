@@ -14,8 +14,9 @@
   position: relative;
   margin-bottom: 15px;
   border-radius: 0.6em;
-  background: transparent;
+  background: #444444;
   font-size: 16px;
+  color: white;
 
   &:before,
   &:after {
@@ -105,4 +106,8 @@
   font-size: 18px;
   height: 40px;
   width: 100%;
+  color: white;
+  font-weight: bold;
+  background: #444444;
+  border: none;
 }
