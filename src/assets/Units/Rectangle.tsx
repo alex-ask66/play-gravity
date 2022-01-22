@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import * as React from "react";
-import { HoodieRegions, TColorState } from "../../features/types";
+import { HoodieRegionsEnum, TColorState } from "../../features/types";
 
 interface IProps {
   className?: string;
@@ -52,7 +52,7 @@ const Rectangle = ({ className, style, onClick, colors = {} }: IProps) => {
       style={{ ...style, enableBackground: "new 0 0 282.9 496.5" }}
       xmlSpace="preserve"
     >
-      <g id={HoodieRegions.Bottom} onClick={onClick}>
+      <g id={HoodieRegionsEnum.Bottom} onClick={onClick}>
         <path
           style={st0}
           d="M16.5,340c0,0-5.9,0.9-6.9-6.4c-0.9-7.3-1.7-12.5-2.8-15.4c-1.2-2.8-6.2-11.1-5.7-15.8
@@ -67,7 +67,7 @@ const Rectangle = ({ className, style, onClick, colors = {} }: IProps) => {
 		c-1.2-2.1-1.7-6.3-2-10.1s0.7-4.2,2.5-6.7s2.2-6,2.2-6s-10.6-0.7-21.1-1.2C21.2,336.9,16.5,340,16.5,340z"
         />
       </g>
-      <g id={HoodieRegions.Top} onClick={onClick}>
+      <g id={HoodieRegionsEnum.Top} onClick={onClick}>
         <path
           style={st1}
           d="M17.5,188.4c6.3-22.1,16-55.9,16.3-63.1c0.5-9.9,13.2-37.6,21.1-43.8c7.8-6.2,32.4-13,32.4-13

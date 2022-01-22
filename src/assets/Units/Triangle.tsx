@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import * as React from "react";
-import { HoodieRegions, TColorState } from "../../features/types";
+import { HoodieRegionsEnum, TColorState } from "../../features/types";
 
 interface IProps {
   className?: string;
@@ -60,7 +60,7 @@ const Triangle = ({ className, style, onClick, colors = {} }: IProps) => {
       style={{ ...style, enableBackground: "new 0 0 283.1 496.9" }}
       xmlSpace="preserve"
     >
-      <g id={HoodieRegions.Bottom} onClick={onClick}>
+      <g id={HoodieRegionsEnum.Bottom} onClick={onClick}>
         <path
           style={st0}
           d="M46.5,367.3c0,0-15.8-0.5-20.8,0.5c-5,0.9-8.5,2.6-8.5,2.6v-4c0,0,3.3-3.3,2.8-9.2s-3.5-17-3.5-17
@@ -86,7 +86,7 @@ const Triangle = ({ className, style, onClick, colors = {} }: IProps) => {
 		c-3.3-2.8-5.2-6.2-5.2-20.1c0-14,2.7-37.7,2.5-44.7C45.3,374.3,46,366.8,46,366.8z"
         />
       </g>
-      <g id={HoodieRegions.Middle} onClick={onClick}>
+      <g id={HoodieRegionsEnum.Middle} onClick={onClick}>
         <path
           style={st1}
           d="M275.5,256.4c-1.3,6.4-3.7,15-4.7,20.5c-1.5,8-2.8,7.7,0.5,10.9c3.3,3.2,9.5,7.3,9.7,10.5s0.7,8.3,0.5,9.2
@@ -110,7 +110,7 @@ const Triangle = ({ className, style, onClick, colors = {} }: IProps) => {
 		s19.8,7,24.8,8.9C255.2,246,275,255.8,275,255.9z"
         />
       </g>
-      <g id={HoodieRegions.Top} onClick={onClick}>
+      <g id={HoodieRegionsEnum.Top} onClick={onClick}>
         <path
           style={st2}
           d="M23.3,165.4c5-17.8,9.7-35.6,9.9-40.6c0.5-9.9,13.2-37.6,21.1-43.8c7.8-6.2,32.4-13,32.4-13

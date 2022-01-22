@@ -1,0 +1,108 @@
+.container {
+  padding-top: 70px;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.back {
+  padding: 0.6em 0.5em;
+  position: relative;
+  margin-bottom: 15px;
+  border-radius: 0.6em;
+  background: transparent;
+  font-size: 16px;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 10px;
+    background: #444444;
+    transform-origin: left center;
+  }
+
+  &:before {
+    transform: translate(-130%, -50%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-130%, -50%) rotate(-45deg);
+  }
+}
+
+.greeting {
+  font-size: 18px;
+}
+
+.form {
+  margin-top: auto;
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+.section {
+  display: flex;
+  flex-flow: column;
+  padding: 0 15px;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  &.textarea {
+    flex: 1;
+
+    .input {
+      resize: none;
+      text-align: left;
+    }
+  }
+}
+
+.input {
+  background: transparent;
+  color: #444444;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid #444444;
+  padding: 0.3em 0.4em;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+    background: #fff;
+  }
+
+  &::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  color: #ff0000;
+}
+
+.controls {
+  margin-top: auto;
+}
+
+.submit {
+  font-size: 18px;
+  height: 40px;
+  width: 100%;
+}

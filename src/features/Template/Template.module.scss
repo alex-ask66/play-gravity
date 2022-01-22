@@ -21,6 +21,7 @@
 
 .hoodie {
   width: 80vw;
+  max-height: 80vh;
   margin-top: 5vh;
 }
 
@@ -29,24 +30,20 @@
   margin-top: auto;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   border-top: 1px solid gray;
   box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
-
-  &::before {
-    content: "";
-    width: 1px;
-    background: gray;
-    position: absolute;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
 
 .nav {
   max-height: 40px;
+  max-width: 10vw;
   padding: 10px 0;
   flex: 1;
   border: none;
+  background: none;
+}
+
+.submit {
+  font-size: 18px;
 }

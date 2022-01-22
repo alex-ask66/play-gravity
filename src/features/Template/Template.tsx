@@ -13,6 +13,7 @@ interface IProps {
   className?: string;
   onClick: (e: MouseEvent<SVGGElement>) => void;
   colors?: TColorState;
+  onSubmit: () => void;
 }
 
 // TODO: Backend
@@ -29,7 +30,7 @@ interface IProps {
 //  - orders list
 //  - ??? messages settings
 
-const Template = ({ onClick, colors }: IProps) => {
+const Template = ({ onClick, colors, onSubmit }: IProps) => {
   const { carouselFragment, slideToNextItem, slideToPrevItem } =
     useSpringCarousel({
       withLoop: true,
@@ -79,6 +80,9 @@ const Template = ({ onClick, colors }: IProps) => {
       <div className={styles.controls}>
         <button key="prev" onClick={slideToNextItem} className={styles.nav}>
           {"<"}
+        </button>
+        <button key="submit" onClick={onSubmit} className={styles.submit}>
+          Заказать
         </button>
         <button key="next" onClick={slideToPrevItem} className={styles.nav}>
           {">"}

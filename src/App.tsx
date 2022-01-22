@@ -1,22 +1,28 @@
-import { MouseEvent, useCallback, useState } from "react";
 import * as React from "react";
+import { Fragment, MouseEvent, useCallback, useState } from "react";
 import "./App.scss";
+import ClientForm from "./features/ClientForm/ClientForm";
 import Colors from "./features/Colors/Colors";
 
-import Template from "./features/hoodie/Template";
-import { HoodieRegions, TColorState } from "./features/types";
+import Template from "./features/Template/Template";
+import { HoodieRegionsEnum, TColorState, ViewsEnum } from "./features/types";
 
 function App() {
-  const [active, setActive] = useState<HoodieRegions | null>(null);
+  const [view, setView] = useState<ViewsEnum>(ViewsEnum.Template);
+  const [active, setActive] = useState<HoodieRegionsEnum | null>(null);
   const [colors, setColor] = useState<TColorState>();
 
-  /*
-  {
-    [HoodieRegions.Top]: null,
-    [HoodieRegions.Middle]: null,
-    [HoodieRegions.Bottom]: null,
-  }
-   */
+  const handleTemplateSubmit = useCallback(() => {
+    // TODO: Do we need to add any validation?
+    setView(ViewsEnum.Form);
+  }, []);
+
+  const handleFormSubmit = useCallback(
+    (client: any) => {
+      console.log("Submitting the App with values", { colors, client });
+    },
+    [colors]
+  );
 
   const handleClickColor = useCallback(
     (color: string) => {
@@ -38,27 +44,30 @@ function App() {
           width: "80vw",
         }}
       >
-        {/*<input*/}
-        {/*  className="input"*/}
-        {/*  type="color"*/}
-        {/*  onInput={({ currentTarget: { value } }) =>*/}
-        {/*    setColor((prevState) => ({*/}
-        {/*      ...prevState,*/}
-        {/*      ...(active ? { [active as string]: value } : {}),*/}
-        {/*    }))*/}
-        {/*  }*/}
-        {/*  name="color"*/}
-        {/*/>*/}
         <h1>play_gravity</h1>
-        <Colors onClick={handleClickColor} />
-        <Template
-          colors={colors}
-          onClick={(e: MouseEvent<SVGGElement>) =>
-            setActive(
-              e.currentTarget.id ? (e.currentTarget.id as HoodieRegions) : null
-            )
-          }
-        />
+        {view === ViewsEnum.Template && (
+          <Fragment>
+            <Colors onClick={handleClickColor} />
+            <Template
+              colors={colors}
+              onClick={(e: MouseEvent<SVGGElement>) =>
+                setActive(
+                  e.currentTarget.id
+                    ? (e.currentTarget.id as HoodieRegionsEnum)
+                    : null
+                )
+              }
+              onSubmit={handleTemplateSubmit}
+            />
+          </Fragment>
+        )}
+        {view === ViewsEnum.Form && (
+          <ClientForm
+            onBack={() => setView(ViewsEnum.Template)}
+            onSubmit={handleFormSubmit}
+          />
+        )}
+        {view === ViewsEnum.Congrats && <div>Congratulations!</div>}
       </div>
     </div>
   );
