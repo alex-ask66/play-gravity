@@ -52,7 +52,6 @@ function App() {
         <h1>play_gravity</h1>
         <Colors onClick={handleClickColor} />
         <Template
-          active={active}
           colors={colors}
           onClick={(e: MouseEvent<SVGGElement>) =>
             setActive(
