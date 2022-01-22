@@ -44,20 +44,9 @@
   }
 }
 
-.dot {
+.nav {
   max-height: 40px;
   padding: 10px 0;
   flex: 1;
   border: none;
-}
-
-// TODO
-.top,
-.middle,
-.bottom {
-  fill: #ffffff;
-}
-
-.active {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }

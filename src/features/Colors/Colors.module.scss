@@ -4,6 +4,7 @@ $topOffset: 50px;
   position: fixed;
   top: $topOffset;
   max-height: calc(100vh - #{$topOffset});
+  z-index: 1000;
 }
 
 .left {

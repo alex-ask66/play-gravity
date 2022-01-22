@@ -1,3 +1,9 @@
+export enum HoodieRegions {
+  Top = "top",
+  Middle = "middle",
+  Bottom = "bottom",
+}
+
 export interface IColorItem {
   id: string;
   in_stock: boolean;
@@ -12,3 +18,7 @@ export interface IFirestoreDataState {
     };
   };
 }
+
+export type TColorState = {
+  [key in HoodieRegions]?: IColorItem["hex"];
+};

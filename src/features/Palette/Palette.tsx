@@ -8,9 +8,10 @@ import styles from "./Palette.module.scss";
 interface IProps {
   className?: string;
   items: IColorItem[];
+  onClick: (color: string) => void;
 }
 
-const Palette = ({ className, items }: IProps) => {
+const Palette = ({ className, items, onClick }: IProps) => {
   return (
     <div className={cn(styles.container, className)}>
       {items.map(({ id, name, hex }) => (
@@ -19,6 +20,7 @@ const Palette = ({ className, items }: IProps) => {
           style={{ backgroundColor: hex }}
           key={id}
           title={name}
+          onClick={() => onClick(hex)}
         />
       ))}
     </div>

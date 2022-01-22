@@ -9,7 +9,11 @@ import Palette from "../Palette/Palette";
 
 import styles from "./Colors.module.scss";
 
-const Colors: React.FC<{}> = () => {
+interface IProps {
+  onClick: (color: string) => void;
+}
+
+const Colors: React.FC<IProps> = ({ onClick }) => {
   useFirestoreConnect<{ items: IColorItem[] }>({
     collection: "resources",
     doc: "colors",
@@ -29,11 +33,13 @@ const Colors: React.FC<{}> = () => {
       {middle
         ? [
             <Palette
+              onClick={onClick}
               items={colors.slice(0, middle)}
               className={cn(styles.container, styles.left)}
               key="left"
             />,
             <Palette
+              onClick={onClick}
               items={colors.slice(middle)}
               className={cn(styles.container, styles.right)}
               key="right"
