@@ -11,7 +11,7 @@ import { HoodieRegionsEnum, TColorState, ViewsEnum } from "./features/types";
 
 function App() {
   const [clickedLogoCounter, setClickedLogoCounter] = useState(0);
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [view, setView] = useState<ViewsEnum>(ViewsEnum.Template);
   const [active, setActive] = useState<HoodieRegionsEnum | null>(null);
   const [colors, setColor] = useState<TColorState>();
