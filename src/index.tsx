@@ -17,7 +17,8 @@ ReactDOM.render(
       <ReactReduxFirebaseProvider
         firebase={firebase}
         config={{
-          userProfile: null,
+          userProfile: "users",
+          useFirestoreForProfile: true,
         }}
         dispatch={store.dispatch}
         createFirestoreInstance={createFirestoreInstance}

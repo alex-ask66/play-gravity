@@ -31,11 +31,11 @@
   }
 
   &:before {
-    transform: translate(-130%, -50%) rotate(45deg);
+    transform: translate(-150%, -50%) rotate(45deg);
   }
 
   &:after {
-    transform: translate(-130%, -50%) rotate(-45deg);
+    transform: translate(-150%, -50%) rotate(-45deg);
   }
 }
 
@@ -101,6 +101,9 @@
 
 .controls {
   margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .submit {

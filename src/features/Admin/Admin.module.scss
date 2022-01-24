@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  padding-top: 50px;
+}
+
+.header {
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 0.3em 0.4em;
+  position: relative;
+  margin-bottom: 25px;
+  border-radius: 0.6em;
+  background: #444444;
+  font-size: 16px;
+  color: white;
+}
+
+.back {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 10px;
+    background: #444444;
+    transform-origin: left center;
+  }
+
+  &:before {
+    transform: translate(-150%, -50%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-150%, -50%) rotate(-45deg);
+  }
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.control {
+  background: #444444;
+  color: white;
+  border: none;
+  flex: 1;
+  font-size: 18px;
+  padding: 0.3em;
+}
